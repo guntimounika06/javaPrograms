@@ -1,0 +1,73 @@
+-- Have Two tables with foreignKey--
+SalesMan -> Fields { salesman_id, name, city, commission };
+Customer -> { customer_id, cust_name, city, grade, salesman_id } -- Relation with SalesMan
+
+-- Write a SQL statement to prepare a list with salesman name, customer name and their cities for the salesmen and customer who belongs to the same city.--
+
+SELECT * FROM practice.customer;
+
+INSERT INTO customer(customer_id, cust_name, city, grade, salesman_id)
+VALUES(101, 'Tom', 'New York', 'A', 1),
+(102, 'Richin', 'London', 'B' , 2),
+(103, 'Hari', 'USA', 'C', 3);
+
+
+SELECT * FROM practice.salesman;
+show tables;
+INSERT INTO salesman(salesman_id, name, city, commission) VALUES
+(1, 'John', ' New York', 0.11),
+(2, 'Honey', 'London', 0.12),
+(3, 'Siri', 'USA' , 0.13);
+
+SELECT
+   s.name AS salesman_name,
+   c.cust_name AS customer_name,
+   s.city AS city
+
+
+--Add another Table:
+Orders -> Fields { ord_no, purch_amt, ord_date, customer_id, salesman_id } Relation with Customer and SalesMan--
+
+-- Write a SQL statement to make a list with order no, purchase amount, customer name and their cities for those orders which order amount between 500 and 2000.--
+
+SELECT * FROM practice.orders;
+INSERT INTO orders(ord_no, purch_amt, ord_date, customer_id, salesman_id)VALUES
+(101, 1500, '2024-03-01', 101, 1),
+(102, 2200, '2024-03-02', 102, 2),
+(103, 800, '202-02-03', 103, 3),
+(104, 500, '2024-03-03', 101, 1),
+(105, 1800, '2024-03-05', 102, 2);
+
+SELECT
+    o.ord_no,
+    o.purch_amt,
+    c.cust_name,
+    c.city
+FROM orders  o
+JOIN customer c ON o.customer_id = c.customer_id
+WHERE o.purch_amt
+BETWEEN 500 AND 2000;
+
+
+-- Write a SQL statement to know which salesman are working for which customer.--
+
+SELECT
+    s.salesman_id,
+    s.name AS salesman_name,
+    c.customer_id,
+    c.cust_name AS customer_name
+FROM salesman s
+JOIN customer c ON s.salesman_id = c.salesman_id
+order by s.salesman_id;
+
+--Write a SQL statement to find the list of customers who appointed a salesman for their jobs who gets a commission from the company is more than 12%.--
+
+SELECT c.cust_name, s.name, s.commission
+FROM customer c
+JOIN salesman s ON c.salesman_id = s.salesman_id
+WHERE s.commission > 12;
+
+
+
+
+
