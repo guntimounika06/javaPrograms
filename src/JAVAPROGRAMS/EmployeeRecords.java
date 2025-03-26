@@ -3,13 +3,13 @@ import java.util.HashMap;
 import java.util.Map;
 public class EmployeeRecords
 {
-    private Map<Integer, String> employees = new HashMap<>();
+    private final Map<Integer, String> employees = new HashMap<>();
 
     public EmployeeRecords()
     {
-        employees.put(201, "Mounika");
+        employees.put(201, "Monika");
         employees.put(202, "Mani");
-        employees.put(203, "Sriya");
+        employees.put(203, "Priya");
     }
 
     public void displayEmployees()

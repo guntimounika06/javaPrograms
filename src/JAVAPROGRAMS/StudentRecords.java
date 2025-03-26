@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 public class StudentRecords
 {
-    private Map<Integer, String> students = new HashMap<>();
+    private final Map<Integer, String> students = new HashMap<>();
 
     public StudentRecords()
     {
