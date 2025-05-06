@@ -9,6 +9,7 @@ class Examples
 
     void display()
     {
+        int i=0;
         System.out.println("Private: " + privateVar);
         System.out.println("Default: " + defaultVar);
         System.out.println("Protected: " + protectedVar);
