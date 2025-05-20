@@ -10,13 +10,13 @@ public class ThisMethod
     public ThisMethod(int x)
     {
         this(20,30);
-        System.out.println("result: " +(x+x));
+        System.out.println("result: 20+30 " +(x+x));
     }
 
     public ThisMethod(int x, int y)
     {
         this();
-        System.out.println("result: " + (x*y));
+        System.out.println("result: calling this " + (x*y));
     }
 
     public static void main(String[] args)
@@ -24,3 +24,4 @@ public class ThisMethod
         ThisMethod t = new ThisMethod(10);
     }
 }
+

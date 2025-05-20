@@ -6,7 +6,7 @@ public class ThisKeyword
     int y;//Instance variable
     public void display(int y)//Local variable
     {
-        this.y = y;
+        y = y;
     }
 
     public void show(int y)

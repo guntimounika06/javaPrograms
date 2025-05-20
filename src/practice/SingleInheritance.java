@@ -6,14 +6,12 @@ class Inheritance
         System.out.println("Brand is Fortuner");
     }
 }
-public class SingleInheritance extends Inheritance
-{
-    public void color()
-    {
+public class SingleInheritance extends Inheritance {
+    public void color() {
         System.out.println("Color is Red");
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         SingleInheritance s = new SingleInheritance();
         s.car();
         s.color();
